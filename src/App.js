@@ -15,7 +15,7 @@ class App extends Component {
     componentDidMount () {
 
       //---- Fetch the data ----//
-      fetch ('https://jsonplaceholder.typicode.com/todos/1')
+      fetch ('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
 
         //---- Put API information via setSate ----//
@@ -29,6 +29,13 @@ class App extends Component {
     }
   
   render () {
+
+    let {isloaded, items} = this.state;
+
+    if (!isloaded) {
+      return <div>...Loading</div>
+    }
+
     return (
       <div className='App'>
 
