@@ -36,12 +36,23 @@ class App extends Component {
       return <div>...Loading</div>
     }
 
-    return (
+    else {
+      return (
       <div className='App'>
-
+        <ul>
+          {/* ---- .map function creates a new array for json to go in. Allows loop of each object ---- */}
+          {items.map(item => {
+            <li key = {item.id}>
+              Name: {item.name}, Email: {item.email}
+              
+            </li> 
+          })}
+        </ul>
 
       </div>
     )
+    }
+    
   }
 }
 
