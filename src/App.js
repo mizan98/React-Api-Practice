@@ -6,8 +6,8 @@ class App extends Component {
   constructor (props) {
     super (props)
     this.state = {
-      items = [],
-      isloaded = false,
+      items: [],
+      isloaded: false,
     }
   }
 
@@ -21,8 +21,8 @@ class App extends Component {
         //---- Put API information via setSate ----//
         .then(json => {
           this.setState({
-            items = json,
-            isloaded = true
+            items: json,
+            isloaded: true
           })
         })
 
@@ -41,12 +41,12 @@ class App extends Component {
       <div className='App'>
         <ul>
           {/* ---- .map function creates a new array for json to go in. Allows loop of each object ---- */}
-          {items.map(item => {
+          {items.map(item => (
             <li key = {item.id}>
               Name: {item.name}, Email: {item.email}
               
             </li> 
-          })}
+          ))}
         </ul>
 
       </div>
